@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wodexuexiao</title>
+    <style>
+        .big{
+            width: 100%;
+            height: 80px;
+        }
+        .colored-text span {
+            line-height: 80px;
+            display: inline-block;
+            font-weight: bold;
+        }
+        .hpy{
+            list-style-type: none;
+            padding: 0;
+            width: 100%;
+            height: 400px;
+        }
+        .tp img{
+            width: 300px;
+            height: 400px;
+            float: left;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="big">
+        <div class="colored-text" id="coloredText">
+            北京工商管理专修学院 是一个你来了就别想走的地方!!!<br>不过来到这里也有许多美好的回忆......
+        </div>
+        <ul class="hpy">
+            <li class="tp"><img src="img/60f39c9c728797c9a9d15a864717057.jpg" alt=""></li>
+            <li class="tp"><img src="img/1c6b68bd761878f4a87d4be67e5066d1.jpg" alt=""></li>
+            <li class="tp"><img src="img/cd5937762c119d9ea1d665efbdebc54.jpg" alt=""></li>
+            <li class="tp"><img src="img/5cbc79f1e6a8bea1c6a9236a0935fc4.png" alt=""></li>
+        </ul>
+    </div>
+    <script>
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        function applyRandomColors() {
+            const textElement = document.getElementById('coloredText');
+            const lines = textElement.innerHTML.split('<br>');
+
+            textElement.innerHTML = '';
+
+            lines.forEach((line, index) => {
+                const lineElement = document.createElement('div');
+
+                for (let i = 0; i < line.length; i++) {
+                    const span = document.createElement('span');
+                    span.textContent = line[i];
+                    span.style.color = getRandomColor();
+                    span.style.fontSize = '45px'; // 设置较大的字体大小
+                    lineElement.appendChild(span);
+                }
+
+                // 如果不是最后一行，则添加换行符
+                if (index < lines.length - 1) {
+                    lineElement.appendChild(document.createElement('br'));
+                }
+
+                textElement.appendChild(lineElement);
+            });
+        }
+
+        applyRandomColors();
+    </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  .slideshow-container {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+  }
+
+  .mySlides {
+    display: none;
+    width: 100%;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Optional: Add animation */
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+
+  .slideshow-container img {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  .daohanglan{
+	width: 100%;
+	height: 40px;
+	background-color:rgb(254, 254, 149);
+	margin-bottom: 10px;
+  }
+  a {
+            text-decoration: none;
+			line-height: 40px;
+			color: inherit;
+
+        }
+	.xiangshi{
+		font-size: 13px;
+		}
+</style>
+</head>
+<body>
+<div class="daohanglan">
+	<a href="http://127.0.0.1:5500/24js/xiaochen.html">◀返回</a>
+	<span class="xiangshi">我们是2018年相识......命运的齿轮开始转动......</span>
+</div>
+<div class="slideshow-container">
+  <div class="mySlides">
+    <img src="img/0cc8ee71832222f57272a78a7f688e4.jpg" alt="Image 1">
+  </div>
+
+  <div class="mySlides">
+    <img src="img/3e6a66d0f1c5989a0dd5c9cadbe1429.jpg" alt="Image 2">
+  </div>
+
+  <div class="mySlides">
+    <img src="img/0cc8ee71832222f57272a78a7f688e4.jpg" alt="Image 3">
+  </div>
+
+  <div class="mySlides">
+    <img src="img/3e6a66d0f1c5989a0dd5c9cadbe1429.jpg" alt="Image 4">
+  </div>
+</div>
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
+
+</body>
+</html>

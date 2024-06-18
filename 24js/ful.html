@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Colors with Larger Font Size</title>
+    <style>
+        .colored-text span {
+            display: inline-block;
+            font-size: 36px; /* 设置较大的字体大小 */
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="colored-text" id="coloredText">
+        北京工商管理专修学院 是一个你来了就别想走的地方!!!<br>不过来到这里也有许多美好的回忆......
+    </div>
+
+    <script>
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        function applyRandomColors() {
+            const textElement = document.getElementById('coloredText');
+            const lines = textElement.innerHTML.split('<br>');
+
+            textElement.innerHTML = '';
+
+            lines.forEach((line, index) => {
+                const lineElement = document.createElement('div');
+
+                for (let i = 0; i < line.length; i++) {
+                    const span = document.createElement('span');
+                    span.textContent = line[i];
+                    span.style.color = getRandomColor();
+                    span.style.fontSize = '36px'; // 设置较大的字体大小
+                    lineElement.appendChild(span);
+                }
+
+                // 如果不是最后一行，则添加换行符
+                if (index < lines.length - 1) {
+                    lineElement.appendChild(document.createElement('br'));
+                }
+
+                textElement.appendChild(lineElement);
+            });
+        }
+
+        applyRandomColors();
+    </script>
+</body>
+</html>

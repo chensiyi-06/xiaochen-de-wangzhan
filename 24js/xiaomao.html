@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wodexiaomao</title>
+    <style>
+        .big{
+        font-size: 40px;
+        margin-left:600px;
+        margin-top:-800px;
+        float: left;
+        }
+        .meiqiu{
+        font-size: 30px;
+        margin-left:600px;
+        margin-top:-700px;
+        float: left;
+        }
+        .meiqiua{
+            font-size: 25px;
+            margin-left: 600px;
+            margin-top: -610px;
+            float: left;
+        }
+        .tu{
+            width: 600px;
+            height: 450px;
+            float: left;
+            margin-left: 600px;
+            margin-top: -520px;
+            border-radius: 20px;
+        }
+         /* 隐藏音频播放器 */
+         audio {
+            display: none;
+        }
+        /* 提示按钮样式 */
+        #playButton {
+            position: absolute;
+            top: 7%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 10px 20px;
+            font-size: 16px;
+            display: none;
+        }
+@media screen and (max-width: 1000px){
+	video{
+        width: 300px;
+        height: 700px;
+        margin: 0;
+        margin-top: -80px;
+    }
+    .big{
+        font-size: 30px;
+        margin-left:345px;
+        margin-top:-555px;
+        float: left;
+        }
+    .meiqiu{
+        font-size: 25px;
+        margin-left:350px;
+        margin-top:-500px;
+        float: left;
+        }
+    .meiqiua{
+            font-size: 20px;
+            margin-left: 350px;
+            margin-top: -450px;
+            float: left;
+        }
+    .tu{
+            width: 400px;
+            height: 280px;
+            float: left;
+            margin-left: 350px;
+            margin-top: -350px;
+            border-radius: 20px;
+        }
+}
+@media screen and (max-width: 1000px){
+	video{
+        width: 300px;
+        height: 700px;
+        margin: 0;
+        margin-top: -80px;
+    }
+    .big{
+        font-size: 30px;
+        margin-left:345px;
+        margin-top:-555px;
+        float: left;
+        }
+    .meiqiu{
+        font-size: 25px;
+        margin-left:350px;
+        margin-top:-500px;
+        float: left;
+        }
+    .meiqiua{
+            font-size: 20px;
+            margin-left: 350px;
+            margin-top: -450px;
+            float: left;
+        }
+    .tu{
+            width: 400px;
+            height: 290px;
+            float: left;
+            margin-left: 350px;
+            margin-top: -370px;
+            border-radius: 20px;
+        }
+}
+@media screen and (max-width: 800px){
+	video{
+        width: 300px;
+        height: 700px;
+        margin: 0;
+        margin-top: -80px;
+    }
+    .big{
+        font-size: 25px;
+        margin-left:345px;
+        margin-top:-555px;
+        float: left;
+        }
+    .meiqiu{
+        font-size: 20px;
+        margin-left:350px;
+        margin-top:-500px;
+        float: left;
+        }
+    .meiqiua{
+            font-size: 15px;
+            margin-left: 350px;
+            margin-top: -450px;
+            float: left;
+        }
+}
+@media screen and (max-width: 760px){
+	video{
+        width: 250px;
+        height: 600px;
+        margin: 0;
+        margin-top: -80px;
+    }
+    .big{
+        font-size: 25px;
+        margin-left:300px;
+        margin-top:-480px;
+        float: left;
+        }
+    .meiqiu{
+        font-size: 15px;
+        margin-left:300px;
+        margin-top:-400px;
+        float: left;
+        }
+    .meiqiua{
+            font-size: 13px;
+            margin-left: 300px;
+            margin-top: -350px;
+            float: left;
+        }
+    .tu{
+            width: 280px;
+            height: 200px;
+            float: left;
+            margin-left: 300px;
+            margin-top: -300px;
+            border-radius: 20px;
+        }
+}
+@media screen and (max-width: 600px){
+	video{
+        width: 230px;
+        height: 550px;
+        margin: 0;
+        margin-top: -70px;
+    }
+    .big{
+        font-size: 20px;
+        margin-left:240px;
+        margin-top:-450px;
+        float: left;
+        }
+    .meiqiu{
+        font-size: 15px;
+        margin-left:240px;
+        margin-top:-390px;
+        float: left;
+        }
+    .meiqiua{
+            font-size: 10px;
+            margin-left: 240px;
+            margin-top: -340px;
+            float: left;
+        }
+    .tu{
+            width: 250px;
+            height: 180px;
+            float: left;
+            margin-left: 240px;
+            margin-top: -280px;
+            border-radius: 20px;
+        }
+}
+@media screen and (max-width: 500px){
+	video{
+        width: 200px;
+        height: 500px;
+        margin: 0;
+        margin-top: -70px;
+    }
+    .big{
+        font-size: 15px;
+        margin-left:210px;
+        margin-top:-410px;
+        float: left;
+        }
+    .meiqiu{
+        font-size: 12px;
+        margin-left:210px;
+        margin-top:-360px;
+        float: left;
+        }
+    .meiqiua{
+            font-size: 10px;
+            margin-left: 210px;
+            margin-top: -330px;
+            float: left;
+        }
+    .tu{
+            width: 200px;
+            height: 150px;
+            float: left;
+            margin-left: 210px;
+            margin-top: -280px;
+            border-radius: 20px;
+        }
+}
+    </style>
+</head>
+<body>
+    <div class="xiaomao">
+        <video width="520" height="910" autoplay muted loop>
+            <source src="46d15c0fa41358420443b2eac24faae7_raw.mp4" type="video/mp4">
+            <source src="46d15c0fa41358420443b2eac24faae7_raw.mp4" type="video/webm">
+        </video>
+        <audio id="background-music" src="JESSE T - 不遗憾 (钢琴版).MP3" autoplay></audio>
+        <button id="playButton">点击播放背景音乐</button>
+    </div>
+    <span class="big">它是我2023年一场大雪中捡到的...</span>
+    <p class="meiqiu">我和朋友给她起名叫煤球</p>
+    <p class="meiqiua">虽然有时它很淘气，但是我看着它一点一点长大，就像是我自己的孩子，很开心</p>
+    <img src="img/03ba178ab66f40e6332b5efa8e9c00c.jpg" class="tu">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var audio = document.getElementById('background-music');
+            var playButton = document.getElementById('playButton');
+
+            // 尝试自动播放音频
+            var playPromise = audio.play();
+
+            if (playPromise !== undefined) {
+                playPromise.then(function() {
+                    console.log("音频自动播放成功");
+                }).catch(function(error) {
+                    console.log("自动播放被阻止: " + error);
+
+                    // 显示提示按钮
+                    playButton.style.display = 'block';
+
+                    // 添加点击事件监听器，用户点击时播放音频
+                    playButton.addEventListener('click', function() {
+                        audio.play().then(function() {
+                            console.log("音频播放成功");
+                            playButton.style.display = 'none'; // 播放成功后隐藏按钮
+                        }).catch(function(err) {
+                            console.log("音频播放仍被阻止: " + err);
+                        });
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
