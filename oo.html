@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .grid-container {
+      width: 100%;
+      display: grid;
+      grid-template-columns: auto auto auto auto auto;
+      background-image: url(./img/57e1c0c401e53dc50d20ac9f1204a32.jpg);
+      background-size: cover; /* 使图片覆盖整个背景 */
+      background-repeat: no-repeat; /* 禁止图片重复 */
+      margin: 0 auto;
+      gap: 20px;
+    }
+
+    .grid-container > div {
+      background-color: rgba(255, 255, 255, 0.2);
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden; /* 防止图片超出容器 */
+    }
+
+    .tupian {
+      width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    img:hover {
+      transform: scale(1.1); /* 鼠标移入时放大1.1倍 */
+    }
+
+    .item1 {
+      grid-row: 3 / 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-container">
+    <div class="item1">
+      <img src="b615fb29348367fb9ce901c0aacd3bb.jpg" class="tupian">
+    </div>
+    <div class="item2"><img src="img/106a88bf1909b12deaecd593c23d94b.jpg" class="tupian"/></div>
+    <div class="item3"><img src="img/106a88bf1909b12deaecd593c23d94b.jpg" class="tupian"/></div>
+    <div class="item4"><img src="img/106a88bf1909b12deaecd593c23d94b.jpg" class="tupian"/></div>
+    <div class="item5"><img src="img/106a88bf1909b12deaecd593c23d94b.jpg" class="tupian"/></div>
+    <div class="item6"><img src="img/106a88bf1909b12deaecd593c23d94b.jpg" class="tupian"/></div>
+    <div class="item7"><img src="img/106a88bf1909b12deaecd593c23d94b.jpg" class="tupian"/></div>
+    <div class="item6"><img src="img/106a88bf1909b12deaecd593c23d94b.jpg" class="tupian"/></div>
+    <div class="item7"><img src="img/106a88bf1909b12deaecd593c23d94b.jpg" class="tupian"/></div>
+  </div>
+</body>
+</html>
