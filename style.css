@@ -71,6 +71,9 @@ a {
 	width: 100%;
 	height: 710px;
 	background-image:url(img/57e1c0c401e53dc50d20ac9f1204a32.jpg);
+	background-size: cover; /* 使图片覆盖整个背景 */
+    background-repeat: no-repeat; /* 禁止图片重复 */
+    background-position: center; /* 使图片居中 */
 	
 }
 .lanse{
