@@ -14,44 +14,102 @@
   .mySlides {
     display: none;
     width: 100%;
+    
   }
 
   img {
     width: 100%;
     height: auto;
   }
-
-  /* Optional: Add animation */
   @keyframes fade {
     from {opacity: .4}
     to {opacity: 1}
   }
-
+  @media screen and (max-width: 500px){
+    .xiangshi{
+		font-size: 10px;
+}
+}
   .slideshow-container img {
     animation-name: fade;
     animation-duration: 1.5s;
   }
   .daohanglan{
 	width: 100%;
-	height: 40px;
-	background-color:rgb(254, 254, 149);
-	margin-bottom: 10px;
+	height: 60px;
+  background-image:url(img/8668c3b8e3d04bf1c00612d39581965.jpg);
+  line-height: 60px;
+  background-size: cover; /* 使图片覆盖整个背景 */
+  background-repeat: no-repeat; /* 禁止图片重复 */
+  background-position: center; /* 使图片居中 */
   }
-  a {
-            text-decoration: none;
-			line-height: 40px;
-			color: inherit;
-
+.xiangshi{
+		font-size: 15px;
+    color: white;
+}
+.xiaotu{
+    width: 100%;
+    height: 1000px;
+    background-image:url(img/8668c3b8e3d04bf1c00612d39581965.jpg);
+    background-size: cover; /* 使图片覆盖整个背景 */
+    background-repeat: no-repeat; /* 禁止图片重复 */
+    background-position: center; /* 使图片居中 */
+}
+body, html {
+            height: 100%;
+            margin: 0;
         }
-	.xiangshi{
-		font-size: 13px;
-		}
+.big {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;   
+             background-image:url(img/80a24a3a0d5f5c8558597ca0c78bc39.png);
+             background-size: cover; /* 使图片覆盖整个背景 */
+             background-repeat: no-repeat; /* 禁止图片重复 */
+             background-position: center; /* 使图片居中 */
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 三列 */
+            grid-template-rows: repeat(3, 1fr);   /* 两行 */
+            gap: 50px;
+            width: 100%; /* 根据需要调整 */
+            max-width: 1100px; /* 根据需要调整 */
+            
+        }
+
+        .circle {
+            width: 100%;
+            padding-bottom: 100%; /* 1:1 aspect ratio */
+            border-radius: 50%;
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .circle img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .circle:hover img {
+            transform: scale(0.8); /* 缩小到原始大小的80% */
+        }
+        .women{
+          font-size: 30px;
+          color: white;
+        }
 </style>
 </head>
 <body>
 <div class="daohanglan">
-	<a href="http://127.0.0.1:5500/24js/xiaochen.html">◀返回</a>
-	<span class="xiangshi">我们是2018年相识......命运的齿轮开始转动......</span>
+	<span class="xiangshi">我们是2018年相识在七18班相知......命运的齿轮开始转动......</span>
 </div>
 <div class="slideshow-container">
   <div class="mySlides">
@@ -60,6 +118,7 @@
 
   <div class="mySlides">
     <img src="img/3e6a66d0f1c5989a0dd5c9cadbe1429.jpg" alt="Image 2">
+
   </div>
 
   <div class="mySlides">
@@ -70,11 +129,25 @@
     <img src="img/3e6a66d0f1c5989a0dd5c9cadbe1429.jpg" alt="Image 4">
   </div>
 </div>
-
+<div class="big">
+  <div class="container">
+      <div class="circle"><img src="img/482509ddd79010751e85357c6fd2d9f.png" alt="Image 1"></div>
+      <div class="circle"><img src="img/f209066092fc9c64ca143099541f1b6.jpg" alt="Image 2"></div>
+      <div class="circle"><img src="img/454905ab82a29c41f9be8d60fd5229c.jpg" alt="Image 3"></div>
+      <div class="circle"><img src="img/4782545dedb347d44121a854102f3c6.jpg" alt="Image 4"></div>
+      <div class="circle"><img src="img/b7282d1e1bb2673b2f8aa4256a62fac.jpg" alt="Image 5"></div>
+      <div class="circle"><img src="img/7c9757b6f6eb4b6b84d2f288e0ef23a.jpg" alt="Image 6"></div>
+      <div class="circle"><img src="img/bf55b48bd012ed3129fbee41cde11ff.jpg" alt="Image 4"></div>
+      <div class="circle"><img src="img/c8c562c3f21c59d1114236b3234afc6.jpg" alt="Image 5"></div>
+      <div class="circle"><img src="img/7c90b33f2295a95260964c81de9ea92.jpg" alt="Image 6"></div>
+      <div class="circle"><img src="img/2cb330a025c966a1de4f02bc8eb58f0.jpg" alt="Image 4"></div>
+      <div class="circle"><img src="img/3e40a4a59d1f58b8edbef18048fb5fc.jpg" alt="Image 5"></div>
+      <div class="circle"><img src="img/ec9edea3d13ade03f94764dbef4aeca.jpg" alt="Image 6"></div>
+  </div>
+</div>
 <script>
 var slideIndex = 0;
 showSlides();
-
 function showSlides() {
   var i;
   var slides = document.getElementsByClassName("mySlides");
