@@ -1,67 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Circles</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>点击图片渐变消失跳转页面</title>
     <style>
-        body, html {
-            height: 100%;
-            margin: 0;
-        }
-
-        .big {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0;
-        }
-
-        .container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr); /* 三列 */
-            grid-template-rows: repeat(2, 1fr);   /* 两行 */
-            gap: 10px;
-            width: 90%; /* 根据需要调整 */
-            max-width: 800px; /* 根据需要调整 */
-        }
-
-        .circle {
-            width: 100%;
-            padding-bottom: 100%; /* 1:1 aspect ratio */
-            border-radius: 50%;
-            overflow: hidden;
-            position: relative;
-            transition: transform 0.3s ease;
-        }
-
-        .circle img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .circle:hover img {
-            transform: scale(1.2);
-        }
+    .main-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+    }
+    
+    .grid-layout {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        width: 80%;
+        max-width: 1200px;
+    }
+    
+    .photo-box {
+        position: relative;
+        width: 100%;
+        padding-bottom: 75%; /* 4:3 aspect ratio */
+        overflow: hidden;
+    }
+    
+    .photo-box img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: opacity 1s ease-out;
+    }
+    
+    .fade-effect {
+        opacity: 0;
+    }
     </style>
 </head>
 <body>
-    <div class="big">
-        <div class="container">
-            <div class="circle"><img src="img/03ba178ab66f40e6332b5efa8e9c00c.jpg" alt="Image 1"></div>
-            <div class="circle"><img src="img/03ba178ab66f40e6332b5efa8e9c00c.jpg" alt="Image 2"></div>
-            <div class="circle"><img src="img/03ba178ab66f40e6332b5efa8e9c00c.jpg" alt="Image 3"></div>
-            <div class="circle"><img src="img/03ba178ab66f40e6332b5efa8e9c00c.jpg" alt="Image 4"></div>
-            <div class="circle"><img src="img/03ba178ab66f40e6332b5efa8e9c00c.jpg" alt="Image 5"></div>
-            <div class="circle"><img src="img/03ba178ab66f40e6332b5efa8e9c00c.jpg" alt="Image 6"></div>
+    <div class="main-container">
+        <div class="grid-layout">
+            <div class="photo-box">
+                <a href="https://www.example1.com" class="link-to-page">
+                    <img src="1.jpg" alt="Image 1" class="fade-image">
+                </a>
+            </div>
+            <div class="photo-box">
+                <a href="https://www.example2.com" class="link-to-page">
+                    <img src="1.jpg" alt="Image 2" class="fade-image">
+                </a>
+            </div>
+            <div class="photo-box">
+                <a href="https://www.example3.com" class="link-to-page">
+                    <img src="1.jpg" alt="Image 3" class="fade-image">
+                </a>
+            </div>
+            <div class="photo-box">
+                <a href="https://www.example4.com" class="link-to-page">
+                    <img src="1.jpg" alt="Image 4" class="fade-image">
+                </a>
+            </div>
+            <div class="photo-box">
+                <a href="https://www.example5.com" class="link-to-page">
+                    <img src="1.jpg" alt="Image 5" class="fade-image">
+                </a>
+            </div>
+            <div class="photo-box">
+                <a href="https://www.example6.com" class="link-to-page">
+                    <img src="1.jpg" alt="Image 6" class="fade-image">
+                </a>
+            </div>
+            <div class="photo-box">
+                <a href="https://www.example7.com" class="link-to-page">
+                    <img src="1.jpg" alt="Image 7" class="fade-image">
+                </a>
+            </div>
+            <div class="photo-box">
+                <a href="https://www.example8.com" class="link-to-page">
+                    <img src="1.jpg" alt="Image 8" class="fade-image">
+                </a>
+            </div>
+            <div class="photo-box">
+                <a href="https://www.example5.com" class="link-to-page">
+                    <img src="1.jpg" alt="Image 5" class="fade-image">
+                </a>
+            </div>
+            <div class="photo-box">
+                <a href="https://www.example6.com" class="link-to-page">
+                    <img src="1.jpg" alt="Image 6" class="fade-image">
+                </a>
+            </div>
+            <div class="photo-box">
+                <a href="https://www.example7.com" class="link-to-page">
+                    <img src="1.jpg" alt="Image 7" class="fade-image">
+                </a>
+            </div>
+            <div class="photo-box">
+                <a href="https://www.example8.com" class="link-to-page">
+                    <img src="1.jpg" alt="Image 8" class="fade-image">
+                </a>
+            </div>
         </div>
     </div>
+    <script>
+        document.querySelectorAll('.link-to-page').forEach(link => {
+            link.addEventListener('click', function(event) {
+                const image = this.querySelector('img');
+                image.classList.add('fade-effect');
+                event.preventDefault(); // Prevent the default link click action
+
+                setTimeout(() => {
+                    window.location.href = this.href; // Navigate to the link's href attribute
+                }, 1000); // Match this duration with the CSS transition duration
+            });
+        });
+    </script>
 </body>
 </html>

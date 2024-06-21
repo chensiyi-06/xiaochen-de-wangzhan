@@ -32,3 +32,15 @@ function onScroll() {
 }
 
 window.addEventListener('scroll', onScroll);
+
+document.querySelectorAll('.link-to-page').forEach(link => {
+    link.addEventListener('click', function(event) {
+        const image = this.querySelector('img');
+        image.classList.add('fade-effect');
+        event.preventDefault(); // Prevent the default link click action
+
+        setTimeout(() => {
+            window.location.href = this.href; // Navigate to the link's href attribute
+        }, 1000); // Match this duration with the CSS transition duration
+    });
+});
