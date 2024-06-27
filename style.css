@@ -14,7 +14,7 @@ body{
 	padding: 10px 0;
 	z-index: 1000; /* 确保导航栏在所有内容的上层 */
 	height: 60px;
-	background-image: url(./img/31873a5de7dbd524697e73256225e74.png);
+	background-image: url(https://xiaochentaicongmong.oss-cn-beijing.aliyuncs.com/img/1%20%287%29.png);
 	list-style-type: none; /* 移除li元素的默认样式 */
 	padding: 0; /* 去除默认的内边距 */
 	text-align: center; /* 将文字居中 */
@@ -67,19 +67,11 @@ a {
 	background-color: rgb(255, 255, 206);
 	padding-top: 70px;
 }
-.lvse{
-	width: 100%;
-	height: 710px;
-	background-image:url(./img/57e1c0c401e53dc50d20ac9f1204a32.jpg);
-	background-size: cover; /* 使图片覆盖整个背景 */
-    background-repeat: no-repeat; /* 禁止图片重复 */
-    background-position: center; /* 使图片居中 */
-	
-}
+
 .lanse{
 	width: 100%;
 	height: 1000px;
-	background-image:url(./img/57e1c0c401e53dc50d20ac9f1204a32.jpg);
+	background-image:url(https://xiaochentaicongmong.oss-cn-beijing.aliyuncs.com/img/1%20%2832%29.jpg);
 	background-size: cover; /* 使图片覆盖整个背景 */
     background-repeat: no-repeat; /* 禁止图片重复 */
     background-position: center; /* 使图片居中 */
@@ -93,7 +85,7 @@ a {
 	width: 100%;
 	height: 200px;
 	position: absolute;
-	background-image:url(./img/116d7c966e8e15b0b514d0682ecfb4e.jpg);
+	background-image:url(https://xiaochentaicongmong.oss-cn-beijing.aliyuncs.com/img/1%20%287%29.png);
 	background-size: cover; /* 使图片覆盖整个背景 */
     background-repeat: no-repeat; /* 禁止图片重复 */
     background-position: center; /* 使图片居中 */
@@ -131,7 +123,7 @@ a {
 }
 .bigtu{
 	width: 100%;
-	background-image: url(./img/57e1c0c401e53dc50d20ac9f1204a32.jpg);
+	background-image: url(https://xiaochentaicongmong.oss-cn-beijing.aliyuncs.com/img/1%20%2832%29.jpg);
 }
 .grid-container {
 	width: 100%;
