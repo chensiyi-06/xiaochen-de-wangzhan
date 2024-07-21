@@ -2,109 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=\, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Fade-In Effect</title>
     <style>
-    .photo-box {
-    position: relative;
-    width: 100%;
-    padding-bottom: 75%; /* 4:3 aspect ratio */
-    overflow: hidden;
-    text-align: center; /* 使文字居中 */
-}
-
-.photo-box img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: opacity 1s ease-out;
-}
-
-.image-caption {
-    position: absolute;
-    bottom: 10px; /* 根据需要调整位置 */
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.5); /* 半透明背景 */
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 14px;
-    width: 90%; /* 根据需要调整宽度 */
-}
-
+        body {
+            height: 200vh; /* 为了能够滚动，设置页面高度 */
+        }
+        .fade-in {
+            opacity: 0;
+            transition: opacity 1s;
+        }
     </style>
 </head>
 <body>
-    <div class="photo-box">
-        <a href="https://www.example2.com" class="link-to-page">
-            <img src="1.jpg" alt="Image 2" class="fade-image" />
-        </a>
-        <p class="image-caption">Image 2 Description</p>
+    <div id="content" class="fade-in">
+        <h1>Scroll to Fade In</h1>
+        <p>This text will fade in as you scroll down.</p>
     </div>
-    <div class="photo-box">
-        <a href="https://www.example3.com" class="link-to-page">
-            <img src="1.jpg" alt="Image 3" class="fade-image" />
-        </a>
-        <p class="image-caption">Image 3 Description</p>
-    </div>
-    <div class="photo-box">
-        <a href="https://www.example4.com" class="link-to-page">
-            <img src="1.jpg" alt="Image 4" class="fade-image" />
-        </a>
-        <p class="image-caption">Image 4 Description</p>
-    </div>
-    <div class="photo-box">
-        <a href="https://www.example5.com" class="link-to-page">
-            <img src="1.jpg" alt="Image 5" class="fade-image" />
-        </a>
-        <p class="image-caption">Image 5 Description</p>
-    </div>
-    <div class="photo-box">
-        <a href="https://www.example6.com" class="link-to-page">
-            <img src="1.jpg" alt="Image 6" class="fade-image" />
-        </a>
-        <p class="image-caption">Image 6 Description</p>
-    </div>
-    <div class="photo-box">
-        <a href="https://www.example7.com" class="link-to-page">
-            <img src="1.jpg" alt="Image 7" class="fade-image" />
-        </a>
-        <p class="image-caption">Image 7 Description</p>
-    </div>
-    <div class="photo-box">
-        <a href="https://www.example8.com" class="link-to-page">
-            <img src="1.jpg" alt="Image 8" class="fade-image" />
-        </a>
-        <p class="image-caption">Image 8 Description</p>
-    </div>
-    <div class="photo-box">
-        <a href="https://www.example5.com" class="link-to-page">
-            <img src="1.jpg" alt="Image 5" class="fade-image" />
-        </a>
-        <p class="image-caption">Image 5 Description</p>
-    </div>
-    <div class="photo-box">
-        <a href="https://www.example6.com" class="link-to-page">
-            <img src="1.jpg" alt="Image 6" class="fade-image" />
-        </a>
-        <p class="image-caption">Image 6 Description</p>
-    </div>
-    <div class="photo-box">
-        <a href="https://www.example7.com" class="link-to-page">
-            <img src="1.jpg" alt="Image 7" class="fade-image" />
-        </a>
-        <p class="image-caption">Image 7 Description</p>
-    </div>
-    <div class="photo-box">
-        <a href="https://www.example8.com" class="link-to-page">
-            <img src="1.jpg" alt="Image 8" class="fade-image" />
-        </a>
-        <p class="image-caption">Image 8 Description</p>
-    </div>
-    
+    <script>
+        window.addEventListener('scroll', function() {
+            const content = document.getElementById('content');
+            const contentPosition = content.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.5;
+
+            if (contentPosition < screenPosition) {
+                content.classList.add('active');
+            }
+        });
+    </script>
 </body>
 </html>

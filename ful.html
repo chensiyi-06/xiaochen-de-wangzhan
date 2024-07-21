@@ -3,12 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Colors with Larger Font Size</title>
+    <title>my interesting school</title>
+    <link rel="icon" href="北工商.png" type="image/png">
     <style>
+        body {
+            background: linear-gradient(to right, #8bddf0, #e69fd7); /* 添加背景颜色渐变 */
+        }
+        .colored-text {
+            background: linear-gradient(to right, #dada85, #76f4e1); /* 添加背景渐变效果 */
+            padding: 25px; /* 添加一些内边距 */
+            border-radius: 5px; /* 添加圆角 */
+            position: relative; /* 为了定位3D盒子 */
+            perspective: 1000px; /* 添加透视效果 */
+        }
         .colored-text span {
             display: inline-block;
             font-size: 36px; /* 设置较大的字体大小 */
             font-weight: bold;
+        }
+        .cube {
+            width: 50px;
+            height: 50px;
+            position: absolute; /* 绝对定位 */
+            top: 5%; /* 设置在colored-text的50%位置 */
+            left: 55%;
+            transform: translate(-50%, -50%);
+            transform-style: preserve-3d;
+            animation: rotate 5s infinite linear;
+            border-radius: 10px; /* 添加圆角 */
+        }
+        .cube div {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: rgba(183, 133, 194, 0.5);
+            border: 1px solid #ded0e1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px; /* 添加圆角 */
+            font-size: 24px; /* 设置较大的字体大小 */
+            color: #ded88a; /* 更改字体颜色 */
+        }
+        .front  { transform: translateZ(50px); }
+        .back   { transform: rotateY(180deg) translateZ(50px); }
+        .left   { transform: rotateY(-90deg) translateZ(50px); }
+        .right  { transform: rotateY(90deg) translateZ(50px); }
+        .top    { transform: rotateX(90deg) translateZ(50px); }
+        .bottom { transform: rotateX(-90deg) translateZ(50px); }
+        @keyframes rotate {
+            from { transform: rotateX(0deg) rotateY(0deg); }
+            to { transform: rotateX(360deg) rotateY(360deg); }
+        }
+        .carousel {
+            width: 60%; /* 将宽度设置为父容器的50% */
+            height: 600px; /* 设置固定高度 */
+            margin: 20px auto; /* 居中对齐 */
+            overflow: hidden; /* 隐藏溢出的内容 */
+            position: relative; /* 为了定位轮播图 */
+        }
+        .carousel-inner {
+            display: flex; /* 使用flex布局 */
+            transition: transform 0.5s ease; /* 添加过渡效果 */
+            height: 100%; /* 高度为父容器的100% */
+        }
+        .carousel-item {
+        min-width: 100%; /* 每个项目占据100%的宽度 */
+        box-sizing: border-box; /* 包括内边距和边框 */
+        height: 100%; /* 高度为父容器的100% */
+        border: 25px solid; /* 添加边框 */
+        border-image: linear-gradient(to right, #ff7e5f, #feb47b) 1; /* 添加颜色渐变边框 */
+    }
+        .carousel img {
+            width: 100%; /* 图片宽度为100% */
+            height: 100%; /* 图片高度为100% */
+            object-fit: cover; /* 保持图片比例 */
+            display: block; /* 块级元素 */
+        }
+        .carousel-controls {
+            position: absolute; /* 绝对定位 */
+            top: 50%; /* 垂直居中 */
+            width: 100%; /* 宽度为100% */
+            display: flex; /* 使用flex布局 */
+            justify-content: space-between; /* 两端对齐 */
+            transform: translateY(-50%); /* 垂直居中 */
+        }
+        .carousel-control {
+            background-color: rgba(0, 0, 0, 0.5); /* 半透明背景 */
+            color: white; /* 白色字体 */
+            border: none; /* 无边框 */
+            padding: 10px; /* 内边距 */
+            cursor: pointer; /* 鼠标指针 */
         }
     </style>
 </head>
@@ -16,7 +101,32 @@
     <div class="colored-text" id="coloredText">
         北京工商管理专修学院 是一个你来了就别想走的地方!!!<br>不过来到这里也有许多美好的回忆......
     </div>
-
+    <div class="cube">
+        <div class="front">开心</div>
+        <div class="back">忧愁</div>
+        <div class="left">疲惫</div>
+        <div class="right">快乐</div>
+        <div class="top">知识</div>
+        <div class="bottom">友谊</div>
+    </div>
+    <div class="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item">
+                <img src="img/1 (18).jpg" alt="Image 1">
+            </div>
+            <div class="carousel-item">
+                <img src="img/xx.jpg" alt="Image 2">
+            </div>
+            <div class="carousel-item">
+                <img src="img/xx2.jpg" alt="Image 3">
+            </div>
+        </div>
+        <div class="carousel-controls">
+            <button class="carousel-control" onclick="prevSlide()">&#10094;</button>
+            <button class="carousel-control" onclick="nextSlide()">&#10095;</button>
+        </div>
+    </div>
+    
     <script>
         function getRandomColor() {
             const letters = '0123456789ABCDEF';
@@ -54,6 +164,39 @@
         }
 
         applyRandomColors();
+    </script>
+    <script>
+        let currentIndex = 0;
+        const intervalTime = 3000; // 设置轮播间隔时间（毫秒）
+
+        function showSlide(index) {
+            const slides = document.querySelectorAll('.carousel-item');
+            const totalSlides = slides.length;
+            if (index >= totalSlides) {
+                currentIndex = 0;
+            } else if (index < 0) {
+                currentIndex = totalSlides - 1;
+            } else {
+                currentIndex = index;
+            }
+            const offset = -currentIndex * 100;
+            document.querySelector('.carousel-inner').style.transform = `translateX(${offset}%)`;
+        }
+
+        function nextSlide() {
+            showSlide(currentIndex + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentIndex - 1);
+        }
+
+        function startAutoSlide() {
+            setInterval(nextSlide, intervalTime); // 每隔intervalTime毫秒切换到下一张幻灯片
+        }
+
+        showSlide(currentIndex);
+        startAutoSlide(); // 启动自动轮播
     </script>
 </body>
 </html>
